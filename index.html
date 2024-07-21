@@ -20,7 +20,7 @@
                     <h3 class="sectiontitle">Global</h3>
                     <div class="sliderdiv">
                         <label for="slidergravity">Gravity:</label>
-                        <input type="range" min="0" max="100" id="slidergravity" class="slider" step="0.1">
+                        <input type="range" min="0" max="100" id="slidergravity" class="slider" step="0.1" value="9.8">
                         <p class="value" id="valuegravity"></p>
                     </div>
                 </div>
@@ -29,8 +29,6 @@
                 </div>
             </div>
         </div>
-
-        <script src="pendulum.js"></script>
 
         <style>
             html, body {
@@ -193,6 +191,7 @@
             }
         </style>
     </head>
+    
     <body>
         <script>
             var canvas = document.getElementById("canvas"); 
@@ -219,5 +218,6 @@
 
             updateLabels();
         </script>
+        <script src="pendulum.js"></script>
     </body>
 </html>

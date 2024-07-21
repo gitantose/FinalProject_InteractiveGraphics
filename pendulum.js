@@ -1,5 +1,5 @@
 "use strict";
-// const G = 1.2; // gravitational acceleration
+// var G = 1.2; // gravitational acceleration
 const M = 1.0; // mass
 const L = 1.0; // length
 const dtMax = 30.0; // ms
@@ -79,6 +79,7 @@ uniform float u_cutoff; // cutoff value for transparency
 varying float v_alpha; // from vertex shader indicating alpha value
 void main() {
     float icutoff = 1.0 - u_cutoff;
+    // calculate the trasparency of the color based on the age
     gl_FragColor = vec4(u_color, max(0.0, v_alpha - u_cutoff) / icutoff);
 }`,
 };
@@ -439,7 +440,6 @@ function glRenderer(gl, tailLen) {
     }
 
     window.addEventListener('keypress', function(e) {
-        console.log(e.key)
         switch (e.key) {
             case ' ': // SPACE
                 running = !running;
